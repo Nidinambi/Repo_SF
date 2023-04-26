@@ -1,0 +1,32 @@
+<template>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Parent Name</th>
+            <th>Emirates ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Is Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={studentList} for:item="student">
+            <tr key={student.Id}>
+              <td><lightning-input type="text" value={student.Name} onchange={handleInputChange} data-index={index} data-field="Name"></lightning-input></td>
+              <td><lightning-input type="text" value={student.PARENT__c} onchange={handleInputChange} data-index={index} data-field="PARENT__c"></lightning-input></td>
+              <td><lightning-input type="text" value={student.EMIRATES_ID__c} onchange={handleInputChange} data-index={index} data-field="EMIRATES_ID__c"></lightning-input></td>
+              <td><lightning-input type="date" value={student.Start_Date__c} onchange={handleInputChange} data-index={index} data-field="Start_Date__c"></lightning-input></td>
+              <td><lightning-input type="date" value={student.End_Date__c} onchange={handleInputChange} data-index={index} data-field="End_Date__c"></lightning-input></td>
+              <td><lightning-input type="checkbox" checked={student.Is_Checked__c} onchange={handleInputChange} data-index={index} data-field="Is_Checked__c"></lightning-input></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+      <div class="slds-m-top_medium">
+        <lightning-button variant="brand" label="Add Row" onclick={handleAddRow}></lightning-button>
+        <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+      </div>
+    </div>
+  </template>

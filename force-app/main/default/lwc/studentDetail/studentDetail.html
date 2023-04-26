@@ -1,0 +1,9 @@
+<template>
+    
+    <lightning-record-view-form object-api-name="School__c">
+        <lightning-input-field field-name="Name"></lightning-input-field>
+        <lightning-input-field field-name="ETST_School__c" onchange={handleParentStudentChange}>
+        </lightning-input-field>
+        <lightning-button label="Fetch Data" onclick={fetchStudentData}></lightning-button>
+    </lightning-record-view-form>
+</template>
